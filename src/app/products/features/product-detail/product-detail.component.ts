@@ -14,11 +14,11 @@ export default class ProductDetailComponent {
   productDetailState = inject(ProductDetailSateService).state;
   cartState = inject(CartStateService).state;
 
-  id = input.required<string>();
+  _id = input.required<string>();
 
   constructor() {
     effect(() => {
-      this.productDetailState.getById(this.id());
+      this.productDetailState.getById(this._id());
     });
   }
 
